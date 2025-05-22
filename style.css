@@ -7,79 +7,17 @@ body{
     color: #313E51;
 }
 
+/*-------------------Container-------------------*/
+
 .container{
     height: 60vh;
     width: 70vw;
     position: absolute;
     inset: 0;
     margin: auto;
+    display: none;
 }
 
-.icon{
-    font-size: 20px;
-    color: #626C7F;
-}
-
-
-/* Switch Button */
-.toggleMode{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-/* The switch - the box around the slider */
-.switch {
-  font-size: 13px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-  margin: 0px 0.8rem;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  background-color: #A729F5;
-  border-radius: 50px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: #fff;
-  border-radius: inherit;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.switch input:checked + .slider:before {
-  transform: translateX(1.5em);
-}
-
-.main{
-    display: flex;
-    gap: 5rem;
-    width: 100%;
-    margin-top: 2rem;
-}
-.left{
-    width: 100%;
-}
-/* Heading */
 .mainLeft{
     h1{
         font-size: 4rem;
@@ -89,15 +27,6 @@ body{
             font-weight: 500;
         }
     }
-}
-
-/* Subjects */
-.right{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.75rem;
-    width: 100%;
 }
 
 .choice{
@@ -110,39 +39,81 @@ body{
     cursor: pointer;
     display: flex;
     align-items: left;
-    p{
+    .subject{
         font-size: 1.8rem;
         margin: 0;
         font-weight: 600;
         margin-left: 3rem;
     }
-    i{
-        height: 3rem;
-        width: 3rem;
-        font-size: 1.4rem;
-        border-radius: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 }
+/*-------------------Container-------------------*/
 
-/* Question Page */
+
+
+/*-------------------Question Page-------------------*/
 .questionPage{
-    height: 60vh;
-    width: 60vw;
+    height: 70vh;
+    width: 70vw;
     position: absolute;
     inset: 0;
     margin: auto;
-    display: none;
+    /* display: none; */
 }
 
-/* Header */
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 2rem;
 }
+
+.mcq{
+    font-size: 1.7rem;
+    margin: 0;
+    font-style: 600;
+    margin-left: 1rem;
+    align-self: center;
+}
+/*-------------------Question Page-------------------*/
+
+
+
+/*-------------------Common style-------------------*/
+
+.icon{
+    font-size: 20px;
+    color: #626C7F;
+}
+
+.boxIcon i{
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.4rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    display: flex;
+    gap: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.left{
+    width: 60%;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
 .subject{
     display: flex;
     align-items: center;
@@ -151,25 +122,49 @@ body{
     }
 }
 
-/* Question Answer */
-.questionAnswer{
-    display: flex;
-    gap: 3rem;
-}
-.question h1{
-    font-weight: 500;
-    font-size: 2.3rem;
-}
+/*-------------------Common style-------------------*/
 
-.answer{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    gap: 1rem;
-}
 
-.letter{
-    background-color: #F4F6FA;
-    color: #626C7F;
-    font-weight: 700;
+
+/*-------------------Toggle Button-------------------*/
+.toggleMode{
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
+.switch {
+  font-size: 13px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  margin: 0px 0.8rem;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #A729F5;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: #fff;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+/*-------------------Toggle Button-------------------*/
