@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/acee086188.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <div class="toggleMode"></div>
+
+        <div class="toggleMode">
+            <i class="fa-solid fa-sun icon"></i>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            <i class="fa-solid fa-moon icon"></i>
+        </div>
+
         <div class="main">
-            <div class="heading"></div>
-            <div class="topics">
-                <button type="button" class="topic"></button>
-                <button type="button" class="topic"></button>
-                <button type="button" class="topic"></button>
-                <button type="button" class="topic"></button>
+
+            <div class="heading">
+                <h1>Welcome to the <br><span>Quiz App!</span></h1>
+                <p><i>Pick a subject to get started.</i></p>
+            </div>
+            
+            <div class="subjects">
+                <button type="button" class="topic">Html</button>
+                <button type="button" class="topic">Css</button>
+                <button type="button" class="topic">Js</button>
+                <button type="button" class="topic">Accessibility</button>
             </div>
         </div>
     </div>
