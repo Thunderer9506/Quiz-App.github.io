@@ -9,23 +9,15 @@ body{
 
 .container{
     height: 60vh;
-    width: 60vw;
+    width: 70vw;
     position: absolute;
     inset: 0;
     margin: auto;
-    /* display: none; */
 }
 
 .icon{
     font-size: 20px;
     color: #626C7F;
-}
-
-.main{
-    display: flex;
-    gap: 5rem;
-    width: 100%;
-    margin-top: 2rem;
 }
 
 
@@ -78,9 +70,17 @@ body{
   transform: translateX(1.5em);
 }
 
-/* Heading */
-.heading{
+.main{
+    display: flex;
+    gap: 5rem;
     width: 100%;
+    margin-top: 2rem;
+}
+.left{
+    width: 100%;
+}
+/* Heading */
+.mainLeft{
     h1{
         font-size: 4rem;
         font-weight: 300;
@@ -92,18 +92,17 @@ body{
 }
 
 /* Subjects */
-.subjects{
+.right{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.75rem;
     width: 100%;
-
 }
-.topic{
+
+.choice{
     background-color: #fff;
     color: #313E51;
-    gap: 1rem;
     border-radius: .75rem;
     border: 0;
     padding: .75rem;
@@ -117,34 +116,16 @@ body{
         font-weight: 600;
         margin-left: 3rem;
     }
+    i{
+        height: 3rem;
+        width: 3rem;
+        font-size: 1.4rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
-
-.subjectIcon{
-    height: 3rem;
-    width: 3rem;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.75rem;
-}
-.code{
-    background-color: #FFF1E9;
-    color: orange;
-}
-.brush{
-    background-color: #E0FDEF;
-    color: green;
-}
-.javascript{
-    background-color: #EBF0FF;
-    color: blue;
-}
-.person{
-    background-color: #F6E7FF;
-    color: purple;
-}
-
 
 /* Question Page */
 .questionPage{
