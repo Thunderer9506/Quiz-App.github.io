@@ -15,7 +15,7 @@ body{
     position: absolute;
     inset: 0;
     margin: auto;
-    display: none;
+    /* display: none; */
 }
 
 .mainLeft{
@@ -41,7 +41,7 @@ body{
     position: absolute;
     inset: 0;
     margin: auto;
-    /* display: none; */
+    display: none;
 }
 
 .header{
