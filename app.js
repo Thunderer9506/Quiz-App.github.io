@@ -108,6 +108,12 @@ function renderNextQuestion(){
     optionArr.forEach(btn => btn.classList.remove('active'));
 }
 
+function renderScoreBoard(){
+    document.querySelector('.questionPage').style.display = 'none'
+    document.querySelector('.ScoreBoard').style.display = 'block'
+    document.querySelector('.score-value').innerHTML = `${score} <span>/ 10</span>`
+}
+
 function formHandling(){
     form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -121,9 +127,25 @@ function formHandling(){
                 score -= 1;
             }
         }
-        questionNumber += 1;
-        renderNextQuestion();
+        if (questionNumber != 10){
+            questionNumber += 1;
+            renderNextQuestion();
+        } else{
+            renderScoreBoard()
+        }
     });
 }
+function restart(){
+    stateMode = 0
+    subject = ""
+    option = ""
+    questionNumber = 1
+    score = 0
+    document.querySelector('.ScoreBoard').style.display = 'none'
+    document.querySelector('.container').style.display = 'block'
+    getsubjectValue()
+    userChose()
+}
+
 getsubjectValue()
 userChose()
