@@ -1,7 +1,9 @@
 let stateMode = 0
 const choice = document.querySelectorAll(".choice")
 const subjects = document.querySelectorAll(".subjects Button")
+const form = document.querySelector("form")
 let subject = ""
+let option = ""
 
 function switchMode(){
     if (stateMode == 0) {
@@ -33,4 +35,27 @@ function getsubjectValue(){
     })
 }
 
+function userChose(){
+    const options = document.querySelectorAll(".options Button")
+    const optionArr = Array.from(options).slice(0,4)
+    
+    optionArr.forEach((ele, key) => {
+        ele.addEventListener("click", () => {
+            // Remove 'active' from all buttons
+            optionArr.forEach(btn => btn.classList.remove('active'));
+            // Add 'active' to the clicked button
+            ele.classList.add('active');
+            // Set the option value
+            option = ele.querySelector('p').textContent;
+        })
+    })
+}
+
+function formHandling(){
+    form.addEventListener("submit", (event) =>{
+        event.preventDefault()        
+    })
+}
 getsubjectValue()
+userChose()
+// formHandling()
