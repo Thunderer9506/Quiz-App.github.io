@@ -20,10 +20,12 @@ const icons = {
 const choice = document.querySelectorAll(".choice")
 const subjects = document.querySelectorAll(".subjects Button")
 const form = document.querySelector("form")
+const options = document.querySelectorAll(".options Button")
+const optionArr = Array.from(options).slice(0,4)
 let subject = ""
 let option = ""
 let questionNumber = 1
-
+let score = 0
 
 function switchMode(){
     if (stateMode == 0) {
@@ -72,35 +74,56 @@ function getsubjectValue(){
             subject = ele['childNodes'][3].textContent
             document.querySelector('.container').style.display = 'none'
             document.querySelector('.questionPage').style.display = 'block'
-            console.log(subject)
             renderQuestionpage()
+            formHandling()
         })
     })
 }
 
 function userChose(){
-    const options = document.querySelectorAll(".options Button")
-    const optionArr = Array.from(options).slice(0,4)
-    
     optionArr.forEach((ele, key) => {
         ele.addEventListener("click", () => {
             optionArr.forEach(btn => btn.classList.remove('active'));
             ele.classList.add('active');
             option = ele.querySelector('p').textContent;
+            console.log(option);
+            
         })
     })
 }
 
 function renderNextQuestion(){
-    
+    const questionNo = document.querySelector('.questionNo')
+    const question = document.querySelector('.question')
+    const option1 = document.querySelector('.option-1')
+    const option2 = document.querySelector('.option-2')
+    const option3 = document.querySelector('.option-3')
+    const option4 = document.querySelector('.option-4')
+    questionNo.textContent = `Question ${questionNumber} of 10`
+    question.textContent = quizData[subject][questionNumber-1]['question']
+    option1.textContent = quizData[subject][questionNumber-1]['options'][0]
+    option2.textContent = quizData[subject][questionNumber-1]['options'][1]
+    option3.textContent = quizData[subject][questionNumber-1]['options'][2]
+    option4.textContent = quizData[subject][questionNumber-1]['options'][3]
+    optionArr.forEach(btn => btn.classList.remove('active'));
 }
 
 function formHandling(){
-    form.addEventListener("submit", (event) =>{
-        event.preventDefault()
-        
-    })
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const answer = quizData[subject][questionNumber-1]["answer"];
+        if (answer == option){
+            score += 1;
+            alert("Right Answer");
+        } else{
+            alert("Wrong Answer");
+            if (score > 0){
+                score -= 1;
+            }
+        }
+        questionNumber += 1;
+        renderNextQuestion();
+    });
 }
 getsubjectValue()
 userChose()
-formHandling()
