@@ -1,6 +1,7 @@
 let stateMode = 0
 const choice = document.querySelectorAll(".choice")
 const subjects = document.querySelectorAll(".subjects Button")
+let subject = ""
 
 function switchMode(){
     if (stateMode == 0) {
@@ -27,8 +28,9 @@ function switchMode(){
 function getsubjectValue(){
     subjects.forEach((ele, key) => {
         ele.addEventListener("click", () => {
-            console.log(ele['childNodes'][3].textContent);
+            subject = ele['childNodes'][3].textContent
         })
     })
 }
+
 getsubjectValue()
