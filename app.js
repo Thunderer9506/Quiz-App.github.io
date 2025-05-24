@@ -22,6 +22,8 @@ const subjects = document.querySelectorAll(".subjects Button")
 const form = document.querySelector("form")
 let subject = ""
 let option = ""
+let questionNumber = 1
+
 
 function switchMode(){
     if (stateMode == 0) {
@@ -50,7 +52,18 @@ function renderQuestionpage(){
     `<i class="${icons[subject].class}"
         style="${icons[subject].style}"></i>
     <h2>${subject}</h2>`
-
+    const questionNo = document.querySelector('.questionNo')
+    const question = document.querySelector('.question')
+    const option1 = document.querySelector('.option-1')
+    const option2 = document.querySelector('.option-2')
+    const option3 = document.querySelector('.option-3')
+    const option4 = document.querySelector('.option-4')
+    questionNo.textContent = `Question ${questionNumber} of 10`
+    question.textContent = quizData[subject][0]['question']
+    option1.textContent = quizData[subject][0]['options'][0]
+    option2.textContent = quizData[subject][0]['options'][1]
+    option3.textContent = quizData[subject][0]['options'][2]
+    option4.textContent = quizData[subject][0]['options'][3]
 }
 
 function getsubjectValue(){
@@ -65,29 +78,29 @@ function getsubjectValue(){
     })
 }
 
-
-
 function userChose(){
     const options = document.querySelectorAll(".options Button")
     const optionArr = Array.from(options).slice(0,4)
     
     optionArr.forEach((ele, key) => {
         ele.addEventListener("click", () => {
-            // Remove 'active' from all buttons
             optionArr.forEach(btn => btn.classList.remove('active'));
-            // Add 'active' to the clicked button
             ele.classList.add('active');
-            // Set the option value
             option = ele.querySelector('p').textContent;
         })
     })
 }
 
+function renderNextQuestion(){
+    
+}
+
 function formHandling(){
     form.addEventListener("submit", (event) =>{
-        event.preventDefault()        
+        event.preventDefault()
+        
     })
 }
 getsubjectValue()
 userChose()
-// formHandling()
+formHandling()
