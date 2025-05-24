@@ -1,4 +1,22 @@
 let stateMode = 0
+const icons = {
+    'Html': {
+        class: 'fa-solid fa-code',
+        style: 'background-color: #FFF1E9; color: orange;'
+    },
+    'Css': {
+        class: 'fa-solid fa-brush',
+        style: 'background-color: #E0FDEF; color: green;'
+    },
+    'Js': {
+        class: 'fa-brands fa-js',
+        style: 'background-color: #EBF0FF; color: blue;'
+    },
+    'Accessibility': {
+        class: 'fa-solid fa-person',
+        style: 'background-color: #F6E7FF; color: purple;'
+    }
+}
 const choice = document.querySelectorAll(".choice")
 const subjects = document.querySelectorAll(".subjects Button")
 const form = document.querySelector("form")
@@ -27,13 +45,27 @@ function switchMode(){
     }
 }
 
+function renderQuestionpage(){
+    document.querySelector('.subjectIcon').innerHTML = 
+    `<i class="${icons[subject].class}"
+        style="${icons[subject].style}"></i>
+    <h2>${subject}</h2>`
+
+}
+
 function getsubjectValue(){
     subjects.forEach((ele, key) => {
         ele.addEventListener("click", () => {
             subject = ele['childNodes'][3].textContent
+            document.querySelector('.container').style.display = 'none'
+            document.querySelector('.questionPage').style.display = 'block'
+            console.log(subject)
+            renderQuestionpage()
         })
     })
 }
+
+
 
 function userChose(){
     const options = document.querySelectorAll(".options Button")

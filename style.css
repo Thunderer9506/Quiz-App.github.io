@@ -15,7 +15,6 @@ body{
     position: absolute;
     inset: 0;
     margin: auto;
-    display: none;
 }
 
 .mainLeft{
@@ -41,7 +40,7 @@ body{
     position: absolute;
     inset: 0;
     margin: auto;
-    /* display: none; */
+    display: none;
 }
 
 .header{
@@ -121,7 +120,7 @@ body{
     width: 100%;
 }
 
-.subject{
+.subjectIcon{
     font-family: 'Rubik';
     display: flex;
     align-items: center;
@@ -140,12 +139,16 @@ body{
     cursor: pointer;
     display: flex;
     align-items: left;
-    .subject{
-        font-size: 1.8rem;
-        margin: 0;
-        font-weight: 600;
-        margin-left: 3rem;
-    }
+    
+}
+.subject{
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+    margin-left: 3rem;
+    font-family: 'Rubik';
+    display: flex;
+    align-items: center;    
 }
 
 /*-------------------Common style-------------------*/

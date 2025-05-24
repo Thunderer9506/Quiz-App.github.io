@@ -1,5 +1,5 @@
-{
-    "html": [
+const quizData = {
+    "Html": [
         {
             "question": "What does the <label> tag do?",
             "options": [
@@ -66,7 +66,7 @@
             "answer": "style"
         }
     ],
-    "css": [
+    "Css": [
         {
             "question": "What does 'display: flex' do?",
             "options": [
@@ -133,7 +133,7 @@
             "answer": "Hides overflowed content"
         }
     ],
-    "js": [
+    "Js": [
         {
             "question": "What does 'event.preventDefault()' do?",
             "options": [
@@ -210,7 +210,7 @@
             "answer": "Both value and type"
         }
     ],
-    "accessibility": [
+    "Accessibility": [
         {
             "question": "What does the 'aria-label' attribute do?",
             "options": [
