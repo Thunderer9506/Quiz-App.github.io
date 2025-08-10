@@ -49,13 +49,8 @@ That's it! No build steps or dependencies are required.
 - For each question, select your answer and click "Submit".
 - Your score is updated instantly. At the end, view your total score and try again if you wish.
 
-## Showcase
-
-<!-- App UI Showcase -->
-![Dark Mode](Images/Dark%20Mode.png)
-![Question Page](Images/Question%20Page.png)
-![Score Page](Images/Score%20Page.png)
-
+## Live Demo
+- [Quiz-App.github.io](https://thunderer9506.github.io/Quiz-App.github.io/)
 
 ## Folder Structure
 
